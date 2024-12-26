@@ -1,0 +1,94 @@
+@font-face {
+    font-family: "Roboto-b";
+    src: url("../assets/fonts/Roboto-Bold.ttf");
+    font-family: "Roboto-r";
+    src: url("../assets/fonts/Roboto-Regular.ttf");
+}
+*{
+    box-sizing: border-box;
+}
+:root{
+    --DarkSlateGrey: hsl(234, 29%, 20%);
+    --CharcoalGrey: hsl(235, 18%, 26%);
+    --Grey: hsl(231, 7%, 60%);
+    --White: hsl(0, 0%, 100%);
+}
+body{
+    font-family:"Roboto-r" ;
+    background-color: var(--CharcoalGrey);
+    font-size: 16px;
+}
+/* start form */
+.m{
+    display: flex;
+}
+.cont{
+    background-color: white;
+    border-radius: 25px;
+}
+.ri{
+    height: 440px;
+    max-width: 100%;
+}
+.ri-s{
+    display: none;
+}
+h1{
+    font-weight: bold;
+    color: var(--DarkSlateGrey);
+    margin-bottom: 20px;
+}
+.s{
+    margin-right: 10px;
+}
+div p {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: var(--DarkSlateGrey);
+}
+input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border-color: var(--Grey);
+    margin-bottom: 20px;
+}
+button{
+    font-weight: bold;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--DarkSlateGrey);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    transition: 0.5s ease-in-out;
+}
+button:hover{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,118,0,1) 0%, rgba(255,201,0,1) 100%);
+    box-shadow: rgba(249, 70, 70, 0.1) 0px 1px 1px 0px inset, rgba(86, 93, 50, 0.25) 0px 50px 100px -20px, rgba(170, 13, 13, 0.3) 0px 30px 60px -30px;
+}
+.ss{
+    animation: fade 0.5s ease-in;
+    display: none;
+}
+@keyframes fade {
+    0%,100%{ opacity: 0; }
+    100%{opacity: 1;}
+}
+.not-valid{
+    display: none;
+    color: #8a0202;
+    font-weight: 300;
+}
+@media (max-width:600px) {
+    .cont.r{
+       width: 100%;
+    }
+}
+@media (min-width:600px) {
+    .cont.r{
+       width: 50%;
+    }
+}
+/* end form */

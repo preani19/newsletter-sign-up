@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <!-- icon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="style/bootstrap.min.css">
+  <!-- main style -->
+   <link rel="stylesheet" href="style/style.css">
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <!-- Sign-up form start -->
+  <div class=" m vh-100  justify-content-center align-items-center ">
+    <div class="cont  p-3 d-flex align-items-center mx-0 mx-sm-3 flex-column-reverse  shadow flex-sm-row">
+      <div class="text px-4">
+        <h1>Stay updated!</h1>
+        <p>Join 60,000+ product managers receiving monthly<br> updates on:</p>
+        <div class="d-flex align-items-center mb-2">
+          <img class="s" src="assets/images/icon-list.svg" alt="">Product discovery and building what matters
+        </div>
+        <div class="d-flex align-items-center mb-2">
+          <img class="s" src="assets/images/icon-list.svg" alt="">Measuring to ensure updates are a success
+        </div>
+        <div class="d-flex align-items-center mb-4">
+          <img class="s" src="assets/images/icon-list.svg" alt="">And much more!
+        </div>
+      <form action=""id="form" novalidate>
+        <p>Email address</p>
+        <p class="not-valid">Not Valid</p> 
+        <input type="email" name="email" id="email" placeholder="email@company.com">
+        <div><button class="mb-3 mb-sm-0" type="submit">Subscribe to monthly newsletter</button></div>
+        <span aria-live="polite" id="email-error"></span>
+      </form>
+      
+      </div>
+      <img class="ri d-none d-sm-block" src="assets/images/illustration-sign-up-desktop.svg" alt="">
+      <img class="ri-s d-block d-sm-none mb-5" src="assets/images/illustration-sign-up-mobile.svg" alt="">
+    </div>
+  </div>
+  <!-- Sign-up form end -->
+
+  <!-- Success message start -->
+  <div class=" ss vh-100  justify-content-center align-items-center">
+    <div class=" cont r p-5">
+      <img class="mb-4" src="assets/images/icon-success.svg" alt="">
+      <h1>Thanks for subscribing!</h1>
+      <p class="mb-4"> A confirmation email has been sent to <b>ash@loremcompany.com</b>. 
+      Please open it and click the button inside to confirm your subscription.</p>
+      <div><button onclick="done()" class="mb-3 mb-sm-0" type="submit">Dismiss message</button></div>
+    </div>
+  </div>
+  <!-- Success message end -->
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/preani19">Preani</a>.
+  </div>
+  <script>
+
+    let simpler = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+    const form = document.getElementById('form');
+    let subscreen = document.querySelector('.m') 
+    let sucscreen = document.querySelector('.ss')
+    let sub = document.querySelector('input')
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      const val = e.target.querySelector('#email').value;
+      if(val.match(simpler)){
+        subscreen.style.display ='none';
+        sucscreen.style.display ='flex';
+      }
+      else{
+        sub.style.backgroundColor='#ffa4a4'
+        sub.style.borderColor='#8a0202'
+        sub.style.color='#8a0202'
+        document.querySelector('.not-valid').style.display="block"
+      }
+    }
+
+    form.addEventListener('submit', handleSubmit);
+
+    function done(){
+      subscreen.style.display ='flex';
+      sucscreen.style.display ='none';
+    }
+  </script>
+</body>
+</html>
